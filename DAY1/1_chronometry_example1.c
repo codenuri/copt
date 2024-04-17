@@ -22,11 +22,19 @@ void ex2()
 
 int main()
 {
+	// 시간 측정 방법 #1.
+/*
 	CHECK(START);
 	ex1();
 	CHECK(LAB);
 	ex2();
 	CHECK(END);
+*/
+	
+	// 시간 측정 방법 #2
+	// CHRONOMETRY(함수이름, 함수 인자들..)
+	CHRONOMETRY(ex1);
+	CHRONOMETRY(ex2);
 }
 
 
