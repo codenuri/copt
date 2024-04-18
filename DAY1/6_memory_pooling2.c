@@ -56,15 +56,15 @@ void pool_free(bullet* p)
 
 int main()
 {
-	bullet* p1 = (bullet*)malloc(sizeof(bullet)); 
-	bullet* p2 = (bullet*)malloc(sizeof(bullet));
+	init_pool();
 
-	free(p1); // 화면에서 총알이 사라졌다.
+	bullet* p1 = pool_alloc();
+	bullet* p2 = pool_alloc();
+	printf("p1 주소 : %p\n", p1);
+	pool_free(p1);
 
-	bullet* p3 = (bullet*)malloc(sizeof(bullet));
-
-	free(p2);
-	free(p3);
-
-	// 수백개의 총알을 "메모리 할당/해지" 를 반복하면 너무 오버헤드가 큽니다.
+	bullet* p3 = pool_alloc();
+	printf("p3 주소 : %p\n", p3);
+	pool_free(p2);
+	pool_free(p3);
 }
