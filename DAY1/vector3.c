@@ -36,12 +36,9 @@ int main()
 		if (count == size)
 		{
 			int* tmp = (int*)malloc(sizeof(int) * size * FACTOR);
-
 			// 기존 버퍼내용 => 신규 버퍼에 복사
 			memcpy(tmp, score, sizeof(int) * size);
-
 			free(score);
-
 			score = tmp;
 
 			// 마지막 작업은 ?
@@ -57,5 +54,8 @@ int main()
 }
 
 // 실행해서 1~9까지 입력후 -1 입력해 보세요
+// C++ 사용하시는 분은 위 코드가 STL vector와 유사합니다.
+// 위처럼 "크기를 키워 가면서 사용하는 배열을"  
+// => 동적 배열 또는 vector 라고 합니다.
 
 
