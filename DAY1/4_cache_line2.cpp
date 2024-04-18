@@ -16,14 +16,30 @@ const int sz = 10000000;
 //    CPUA 의 캐쉬를 다시 UPDATE 해야 합니다.
 //    현재 코드는 캐쉬 UPDATE 때문에 너무 오버헤드가 큽니다.
 
+// 그럼  cpu에서 캐시의 n1, n2 값과 메모리의 n1, n2 값을 계속 비교하고 있나요?
+// =>
+
 // 나쁜 코드, 
 // long long n1 = 0;
 // long long n2 = 0;
 
+
 // 방법 1. 2개의 변수 사이에 padding 넣기
-long long n1 = 0;
-char padding[64]; // 64 바이트 만틈 떨어지도록!!
-long long n2 = 0;
+// long long n1 = 0;
+// char padding[64]; // 64 바이트 만틈 떨어지도록!!
+// long long n2 = 0;
+
+// 방법 2. C/C++ 표준 문법으로 변수의 시작 주소를 64바이트 단위로 설정하면 됩니다.
+// C언어   : _Alignas  (C11 부터)
+// C++언어 : alignas   (C++11부터)
+
+#ifdef __cplusplus 
+	alignas(64) long long n1 = 0;
+	alignas(64) long long n2 = 0;
+#else 
+	_Alignas(64) long long n1 = 0;
+	_Alignas(64) long long n2 = 0;
+#endif 
 
 
 void f1()
