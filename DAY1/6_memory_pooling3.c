@@ -79,6 +79,8 @@ void ex2()
 		pool_free(p2);
 		pool_free(p3);
 	}
+
+	destroy_pool();
 }
 
 int main()
