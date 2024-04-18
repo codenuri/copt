@@ -41,6 +41,9 @@ const int sz = 10000000;
 	_Alignas(64) long long n2 = 0;
 #endif 
 
+// printf("%p\n", &n1);  출력되는 주소가 64의 배수로 나오게 됩니다.
+// => 복습 할때 align 이 있을때와 없을때 n1, n2 주소를 출력해 보세요
+
 
 void f1()
 {
