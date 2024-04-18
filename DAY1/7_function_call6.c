@@ -38,12 +38,17 @@ __declspec(naked) int f1()
 {
 	__asm
 	{
+		push ebp
+		mov  ebp, esp
+
 		push 2
 		push 1
 		call f2  
 
 		add  esp, 8
 		//===================================== 이 윗부분만 이해해 보세요.
+		mov  esp, ebp
+		pop ebp
 		ret
 	}
 }
