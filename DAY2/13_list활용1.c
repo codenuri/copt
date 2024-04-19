@@ -33,7 +33,5 @@ int main()
 		insert_back(&(p->vipList), vip_head);
 	}
 }
-
-
-
-
+// 이번 예제에서는 list 에 넣는 코드만..
+// 출력은 다음 예제..
