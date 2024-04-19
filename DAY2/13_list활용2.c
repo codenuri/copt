@@ -15,7 +15,7 @@ typedef struct _People
 
 // 이번 예제의 핵심 : list 안에 있는 모든 People 출력하기
 void show_vip_list(NODE* head)
-{
+{	
 	NODE* cur = head->next;
 
 	for ( ; cur != head; cur = cur->next)
@@ -27,7 +27,6 @@ void show_vip_list(NODE* head)
 		printf("%s(%d), ", p->name, p->age);
 
 	}
-
 }
 
 
@@ -42,8 +41,10 @@ int main()
 	{
 		People* p = (People*)malloc(sizeof(People));
 		p->age = i;
-		sprintf_s(p->name, "lee %d", i);
+		strcpy_s(p->name, 4, "lee");
 
 		insert_back(&(p->vipList), vip_head);
 	}
+
+	show_vip_list(vip_head);
 }
