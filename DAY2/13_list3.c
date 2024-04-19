@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct _node
 {
@@ -67,6 +68,5 @@ int main()
 	insert_back(40);
 	insert_back(50);
 
-	show();
-
+	show(); // 30 20 10 40 50 
 }
