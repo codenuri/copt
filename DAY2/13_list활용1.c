@@ -27,7 +27,7 @@ int main()
 	{
 		People* p = (People*)malloc(sizeof(People));
 		p->age = i;
-		sprintf(p->name, "lee %d", i);	
+		sprintf_s(p->name, "lee %d", i);	
 
 		// #3. list 에 넣으려면 구조체 안의 NODE 멤버 주소를 전달하면 됩니다.
 		insert_back(&(p->vipList), vip_head);
