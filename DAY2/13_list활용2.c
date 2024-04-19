@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stddef.h>  // 이 헤더에 offsetof  매크로가 있습니다.
 #include "list.h"
 
 typedef struct _People
@@ -19,12 +20,15 @@ void show_vip_list(NODE* head)
 
 	for ( ; cur != head; cur = cur->next)
 	{
+		int ds = offsetof(People, vipList);
+	
+		People* p = (People*)((char*)cur - ds); 
+
+		printf("%s(%d), ", p->name, p->age);
 
 	}
 
 }
-
-
 
 
 
