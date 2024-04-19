@@ -13,7 +13,6 @@
 //														 return 1; <<== 재귀종료
 //														 
 
-
 int sum2(int n)
 {
 	if (n == 1) return 1;
@@ -24,6 +23,25 @@ int sum2(int n)
 
 
 // 2. 꼬리 재귀(Tale Recursion)
+// => 핵심은 "재귀호출"이 함수의 마지막 부분에서 이루어 진다는 것
+// => 재귀 호출이 종료되고 돌아와서는 하는 일이 없이 다시 반환만하게 됩니다.
+// => 이경우 함수로 돌아오는 과정이 필요 없습니다.
+//    따라서, 함수가 사용하던 지역변수등도 계속 보관될 필요도 없습니다.
+// => 재귀 호출시, 새로운 스택을 사용하는 것이 아니라
+//    현재 함수가 사용하던 스택을 다시 사용가능합니다.
+// 
+// => 컴파일러가 최적화해서 "현재 스택을 다시 사용하도록 하게 됩니다."
+// => 컴파일러가 지원해야 합니다. 
+
+
+
+// int ret = sum3(5)
+//		     return sumTail(5, 1)
+//				    return sumTail(4, 6)	
+//						   return sumTail(3, 10)		
+//						          return sumTail(2, 13)
+//						                 return sumTail(1, 15)
+//                                              return 15  <=== 재귀 종료
 
 int sumTail(int n, int result)
 {
@@ -35,6 +53,8 @@ int sum3(int n)
 {
 	return sumTail(n, 1);
 }
+
+
 
 
 
