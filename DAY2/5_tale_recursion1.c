@@ -1,7 +1,7 @@
 // 108 page
 #include "chronometry.h"
 
-const int count = 100000;
+
   
 // 재귀 호출을 사용하면
 // 1. 성능이 좋지 않습니다
@@ -16,6 +16,7 @@ const int count = 100000;
 // => 링크 옵션으로 변경은 가능.
 
 
+const int count = 30000;
 
 // 0 ~ n 까지의 합을 구해서 반환하는 함수 만들기
 
