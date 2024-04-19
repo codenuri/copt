@@ -16,7 +16,6 @@ int main()
 
 //	PRESS(); // ok
 
-
 //	if ( n == 1 )
 //		PRESS();	// { printf("press enter");
 					//   getchar(); }
@@ -24,6 +23,7 @@ int main()
 	// 아래 코드의 문제점과 해결책은
 	if (n == 1)
 		PRESS(); // { printf("press enter"); getchar(); };
+				 // do { printf("press enter"); getchar(); } while(0);
 	else
 	{
 	}
