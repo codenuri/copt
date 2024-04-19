@@ -29,8 +29,11 @@ int main()
 
 	// 위 코드는 x, y 멤버가 POINT 구조체에서 얼마나 떨어져 있는지 offset을 구하는코드
 
-	// 아래 매크로를 이해해 보세요
+	// 아래 매크로를 이해해 보세요 ( C 표준에 이미 offsetof 가 있습니다.)
 #define OFFSET_OF(TYPE, MEMBER)  (int)&(((TYPE*)0)->MEMBER)
 
-	printf("%d\n", OFFSET_OF(POINT, y));
+	printf("%d\n", OFFSET_OF(POINT, y) );
+				 // (int)&(((POINT*)0)->y)
 }
+
+// OFFSET_OF(구조체이름, 멤버이름) : 구조체에서 멤버가 있는 위치(offset)을 구하는 매크로
